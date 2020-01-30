@@ -1,7 +1,7 @@
 {
   "name": "broker-grid",
   "author": "Bevan Hunt",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Broker Data Grid for React",
   "main": "index.js",
   "license": "MIT",
@@ -10,14 +10,29 @@
     "data-grid",
     "sse"
   ],
-  "scripts": {},
+  "scripts": {
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
   "dependencies": {
+    "@material-ui/core": "^4.9.0",
+    "@material-ui/icons": "^4.5.1",
     "broker-hook": "0.0.9",
     "lodash": "^4.17.15",
     "material-table": "^1.56.1",
-    "uuid": "^3.4.0"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "uuid": "^3.4.0",
+    "webpack": "^4.41.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.6",
+    "webpack-cli": "^3.3.10"
+  },
   "peerDependencies": {
     "react": ">= 16.12.0"
   },

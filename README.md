@@ -16,15 +16,6 @@ Broker Grid uses Material Table for React and is a real-time insert-only data-gr
 
 #### Usage
 
-Add Material Icons to your HTML
-
-```html
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/icon?family=Material+Icons"
-/>
-```
-
 ```jsx
 import React from 'react';
 import Grid from 'broker-grid';
