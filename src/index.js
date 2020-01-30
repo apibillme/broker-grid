@@ -65,7 +65,7 @@ const Grid = (props) => {
           icons={tableIcons}
           columns={state.data.columns}
           data={state.data.rows}
-          title="Demo Title"
+          title={props.title}
           editable={{
             onRowAdd: newData =>
               new Promise((resolve, reject) => {
@@ -130,7 +130,7 @@ function DataGrid(props) {
   return (
     <div>
       <SSEProvider endpoint={sseEndpoint} options={{headers: {authorization: `Bearer ${props.token}`}}}>
-        <Grid insertEndpoint={insertEndpoint} eventListen={props.eventListen} token={props.token} />
+        <Grid insertEndpoint={insertEndpoint} eventListen={props.eventListen} token={props.token} title={props.title} />
       </SSEProvider>
     </div>
   );

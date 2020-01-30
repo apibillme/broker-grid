@@ -13,6 +13,7 @@ Broker Grid uses Material Table for React and is a real-time insert-only data-gr
 | endpoint | `string` | `true`   | -                            | The endpoint on the server.                                                                                             |
 | event    | `string` | `true`   | -                            | The event to listen for from the SSE.                                                                                   |
 | token    | `string` | `true`   | -                            | The JWT token.                                                                                                          |
+| title    | `string` | `true`   | -                            | The title for the data grid to display.                                                                                 |
 
 #### Usage
 
@@ -21,6 +22,6 @@ import React from 'react';
 import Grid from 'broker-grid';
 
 const App = () => (
-  <Grid endpoint={'http://localhost:8080'} eventListen={'user'} token={'123'} />
+  <Grid endpoint={'http://localhost:8080'} eventListen={'user'} token={'123'} title={'Broker Demo'} />
 );
 ```
