@@ -44,7 +44,7 @@ const tableIcons = {
 
 // insertEndpoint, eventListen, token
 const Grid = (props) => {
-  const state = useSSE(eventListen, {
+  const state = useSSE(props.eventListen, {
     initialState: {
       data: {
         events: null,
