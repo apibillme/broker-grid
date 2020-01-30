@@ -21,6 +21,6 @@ import React from 'react';
 import Grid from 'broker-grid';
 
 const App = () => (
-  <Grid endpoint={'http://localhost:8000'}, eventListen={'user'}, token={'123'} />
+  <Grid endpoint={'http://localhost:8080'}, eventListen={'user'}, token={'123'} />
 );
 ```
