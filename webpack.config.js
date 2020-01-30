@@ -1,7 +1,8 @@
 var path = require('path');
 module.exports = {
   entry: './src/index.js',
-  mode: 'development',
+  mode: 'production',
+  devtool: 'inline-source-map',
   output: {
     path: path.resolve(__dirname, ''),
     filename: 'index.js',
