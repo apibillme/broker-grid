@@ -126,7 +126,7 @@ const Grid = (props) => {
 function DataGrid(props) {
   const insertEndpoint = props.sseEndpoint;
   const sseEndpoint = props.insertEndpoint;
-  const tenantID = proper.tenantID;
+  const tenantID = props.tenantID;
 
   return (
     <div>
