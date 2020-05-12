@@ -124,8 +124,8 @@ const Grid = (props) => {
 
 // apiEndpoint, eventListen, token
 function DataGrid(props) {
-  const insertEndpoint = props.sseEndpoint;
-  const sseEndpoint = props.insertEndpoint;
+  const insertEndpoint = props.insertEndpoint;
+  const sseEndpoint = props.sseEndpoint;
   const tenantID = props.tenantID;
 
   return (
