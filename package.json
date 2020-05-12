@@ -1,7 +1,7 @@
 {
   "name": "broker-grid",
   "author": "Bevan Hunt",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Broker Data Grid for React",
   "main": "index.js",
   "license": "MIT",
