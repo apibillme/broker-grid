@@ -75,7 +75,7 @@ const Grid = (props) => {
                     const ts = Math.round((new Date()).getTime() / 1000);
                     omit(newData, ['timestamp', 'collection_id']);
                     const j = JSON.stringify(newData);
-                    const v = `{"event": "${props.eventListen}", "collection_id": "${id}", "timestamp": ${ts}, "data": ${j}}`;
+                    const v = `{"event": "${props.eventListen}", "tenant_id": "${props.tenantID}", "collection_id": "${id}", "timestamp": ${ts}, "data": ${j}}`;
                     fetch(props.insertEndpoint, {
                       method: 'post',
                       mode: 'cors',
@@ -100,7 +100,7 @@ const Grid = (props) => {
                   const ts = Math.round((new Date()).getTime() / 1000);
                   omit(newData, ['timestamp', 'collection_id']);
                   const j = JSON.stringify(newData);
-                  const v = `{"event": "${props.eventListen}", "collection_id": "${oldData.collection_id}", "timestamp": ${ts}, "data": ${j}}`;
+                  const v = `{"event": "${props.eventListen}", "tenant_id": "${props.tenantID}", "collection_id": "${oldData.collection_id}", "timestamp": ${ts}, "data": ${j}}`;
                   fetch(props.insertEndpoint, {
                     method: 'post',
                     mode: 'cors',
@@ -124,13 +124,14 @@ const Grid = (props) => {
 
 // apiEndpoint, eventListen, token
 function DataGrid(props) {
-  const insertEndpoint = props.endpoint + '/insert';
-  const sseEndpoint = props.endpoint + '/events';
+  const insertEndpoint = props.sseEndpoint;
+  const sseEndpoint = props.insertEndpoint;
+  const tenantID = proper.tenantID;
 
   return (
     <div>
       <SSEProvider endpoint={sseEndpoint} options={{headers: {authorization: `Bearer ${props.token}`}}}>
-        <Grid insertEndpoint={insertEndpoint} eventListen={props.eventListen} token={props.token} title={props.title} />
+        <Grid insertEndpoint={insertEndpoint} tenantID={tenantID} eventListen={props.eventListen} token={props.token} title={props.title} />
       </SSEProvider>
     </div>
   );
