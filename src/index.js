@@ -74,8 +74,9 @@ const Grid = (props) => {
                     const id = uuid();
                     const ts = Math.round((new Date()).getTime() / 1000);
                     omit(newData, ['timestamp', 'collection_id']);
+                    newData['tenant_id'] = props.tenantID; 
                     const j = JSON.stringify(newData);
-                    const v = `{"event": "${props.eventListen}", "tenant_id": "${props.tenantID}", "collection_id": "${id}", "timestamp": ${ts}, "data": ${j}}`;
+                    const v = `{"event": "${props.eventListen}", "collection_id": "${id}", "timestamp": ${ts}, "data": ${j}}`;
                     fetch(props.insertEndpoint, {
                       method: 'post',
                       mode: 'cors',
